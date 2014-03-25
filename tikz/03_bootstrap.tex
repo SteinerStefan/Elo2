@@ -1,0 +1,58 @@
+\begin{circuitikz}[scale = 1, transform shape]
+\draw 
+
+%Titel des Bildes
+node (text) at (1, 0.2)  {\textbf{Bootstrap}}
+% alle Bauteile
+(0,6) node [ pmos, rotate=180, transform shape] (M3) {}
+(M3) node[left] {$M_3$}
+
+(2.5,6) node [ pmos] (M4) {}
+(M4) node[right] {$M_4$}
+
+(4,5) node [ pmos] (M5) {}
+(M5) node[right] {$M_5$}
+
+(0,4) node [ nmos, rotate=180, transform shape] (M1) {}
+(M1) node[left] {$M_1$}
+
+(2.5,4) node [ nmos] (M2) {}
+(M2) node[right] {$M_2$}
+
+(0,2) node [ pnp, , rotate=180, transform shape] (Q1) {}
+(Q1) node[left] {$Q_1$}
+
+%Spannungslinien
+(0,7) to [short, l=$V_{DD}$] (4,7)
+(0,1) to [short, l_=GND] (4,1)
+
+%verbindungen 
+(M3.D) to [short] (0,7)
+(M4.S) to [short, -*] (2.5,7)
+(M3.S) to [short,i =$i_1$ ](M1.S)
+
+(M1.S) to [short, *-] (1.35,4.75)
+(1.35,4.75) to[short ,-*] (1.35, 4)
+
+(M1.G) to [short] (M2.G)
+(M1.D) to (Q1.C)
+
+(Q1.E) to (0,1)
+(Q1.B) to [short, -*] (0.85,1)
+
+(M4.D) to (M2.D)
+(M2.S) to [european resistor, l=$R$, -*] (2.5,1)
+(M5.S) to [short, -*](4,7)
+(M5.G) to [short, -*] (2.5,5)
+(M5.D) to [short, i=$i_5$] (4,3) 
+(M3.G) to (M4.G)
+(2.5,4.6) to [short, i = $i_2$] (2.5, 4.5)
+;
+
+
+
+
+
+\end{circuitikz}
+
+

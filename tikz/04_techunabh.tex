@@ -1,0 +1,20 @@
+\begin{circuitikz}[scale = 1, transform shape]
+\draw 
+%Titel des Bildes
+node (text) at (0, -0.2)  {\textbf{Technologieunabhängig}}
+% alle Bauteile
+(1,1) node [ npn, ] (Q1) {}
+
+%verbindungen
+(Q1.E) to [short, -o] (0, 0.25)
+(Q1.B) to [short,  -o] (0, 1)
+(-0.5, 1) to [open, l=$U_{BE}$] (-0.5, 0.25)
+
+
+
+;
+
+
+
+
+\end{circuitikz}

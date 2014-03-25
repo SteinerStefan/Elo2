@@ -1,0 +1,27 @@
+\begin{circuitikz}[scale = 0.6, transform shape]
+
+\draw 
+%Titel des Bildes
+node (text) at (0, -1)  {\textbf{spannungsteiler}}
+% alle Knoten
+node  (VDD) at (0, 4)  {}
+node  (a)   at (0, 2)  {}
+node  (ref) at (1, 2)  {}
+node  (gnd1)at (0, 0)  {}
+node  (gnd2)at (1, 0)  {}
+
+% Knoten anschreiben
+(VDD) node[left] {$V_{DD}$}
+
+%Verbindungen
+(VDD)  to [european resistor,o-, l = $R_1$] (a)
+       to [european resistor,*-, l = $R_2$] (gnd1)
+(a)    to [short](ref)
+(gnd2) to [open, -o, v = $U_{ref}$] (ref)
+(gnd2) to [short, o-*] (gnd1)
+%Knoten zeichen, gnd und so     
+node[ground] at (gnd1) {};
+
+
+
+\end{circuitikz}

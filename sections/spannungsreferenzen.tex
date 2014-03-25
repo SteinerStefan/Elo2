@@ -1,0 +1,96 @@
+%\begin{table}[h!]
+%\begin{center}
+
+\section{Spannungsreferenzen}
+% % % % % % % % % % % % % % % % % % %
+% %Spannungsteiler
+% % % % % % % % % % % % % % % % % % %
+\subsection{Spannungsteiler}
+
+ 	\begin{minipage}{150pt}
+	 	{ \input{tikz/01_spannungsteiler.tex} }
+ 	\end{minipage}
+ 	\begin{minipage}{150pt}
+	\includegraphics[width = 4cm]{images/spgref/05_spgteiler}
+ 	\end{minipage}
+ 	\begin{minipage}{200pt}
+		\emph{Sensitivität}, empfindlichkeit gegenüber Speisespannungsschwankung:\newline $\underset{V_{DD}}{\overset{U_{Ref}}{S}} = \dfrac{\Delta  U_{Ref}/ U_{Ref}}{\Delta V_{DD}/V{DD}} = 1$\newline
+		$U_{Ref} = V_{DD}\dfrac{R2}{R1+R2}$
+	\end{minipage}\\
+% % % % % % % % % % % % % % % % % % %
+% %Spannungsteiler pnp
+% % % % % % % % % % % % % % % % % % %
+\subsection{Diodenreferenz}
+	\begin{minipage}{100pt}
+	\input{tikz/02_spannungsteilerpnp.tex}
+	\end{minipage}
+	\begin{minipage}{150pt}
+	\includegraphics[width = 4cm]{images/spgref/06_diodenref}
+	\end{minipage}
+	\begin{minipage}{200pt}
+	$U_{Ref} =  \dfrac{kT}{q}\ln\left(\dfrac{I}{I_s}\right) = V_T\cdot \ln\left(\dfrac{I}{I_s}\right)$\newline
+	$\underset{V_{DD}}{\overset{U_{Ref}}{S}} = \dfrac{1}{\ln\left(\dfrac{I}{I_S}\right)}<1$\newline
+	Diff. Widerstand: $r_D=\dfrac{m\cdot V_T}{I}$
+	$k = 1.38\cdot 10^{-23} \frac{J}{K},\newline
+	 T = \text{absolute Temperatur} [K], \newline
+	 q = 1.602\cdot 10^-{19}As, \newline
+	 I_s = \text{Sperrstrom}, \newline
+	 V_T = 25.5mV$	\\
+	\end{minipage}
+\hrule
+% % % % % % % % % % % % % % % % % % %
+% %Bootstrap
+% % % % % % % % % % % % % % % % % % %
+\subsection{PTAT(Proportional to absolute temperature) , Bootstrap Referenz}
+	\begin{minipage}{200pt}
+		\input{tikz/03_bootstrap}
+	\end{minipage}
+	\begin{minipage}{300pt}
+	Die Bootstrap Referenz ist unabhängig von $V_{DD}$, dafür temperaturabhängig, 2 mögliche Arbeitspunkte, Startup-Schaltung benötigt\newline
+	$I_1 = I_2 = I_5 \qquad V_{EB1} = V_R  $\newline
+	$V_{EB1} = m\cdot V_T \ln \left(\dfrac{I_1}{I_S}\right) = I_2 R$\newline
+	Temp. koeffizient: $T_C = \dfrac{1}{V_T}\cdot \dfrac{dV_T}{dT} = \dfrac{1}{T}$
+	\end{minipage}\\
+\hrule
+% % % % % % % % % % % % % % % % % % % %
+% %Technologie unabhängige VT-Referenz
+% % % % % % % % % % % % % % % % % % % %
+\subsection{Technologie unabhängige $V_T$-Referenz}
+	\begin{minipage}{150pt}
+	\includegraphics[width = 6cm]{images/spgref/01_vtref.png}
+		%  not finished tikz tikz/04_techunabh}}&
+	\end{minipage}
+	\begin{minipage}{150pt}
+	\includegraphics[width = 4cm]{images/spgref/02_vtref_diag.png}
+	\end{minipage}
+	\begin{minipage}{200pt}
+	Technologie unabhängige $V_T$ Referenzen hängen nur von der Geometrie der Transistoren ab(Anzahl paralleller Trans.). Sie Werden zur Messung der Temperatur eingesetzt.\newline
+	$V_N = \dfrac{kT}{q}\ln\left(\dfrac{I_C}{N\cdot I_S}\right) $ \newline
+	$V_{BE} =\dfrac{kT}{q}\ln\left(\dfrac{I_C}{I_S}\right)$\newline
+	$\Delta V_{BE} = V_{BE} -V_N = \dfrac{kT}{q}\ln(N)$
+	\end{minipage}
+% % % % % % % % % % % % % % % % % % %
+% %Bandgap-Referenzen
+% % % % % % % % % % % % % % % % % % %
+\subsection{Bandgap Referenzen}
+	\begin{minipage}{250pt}
+		\includegraphics[width = 8cm]{./images/spgref/03_bandgap.png}
+	\end{minipage}
+ 	\begin{minipage}{250pt}
+ 	Bandgap-Referenzen können Temperaturkoeffizienten von 10-100 ppm/°C über einen Temperaturbe-
+ 	reich von 0 °C bis 70 °C erreichen.
+ 	\end{minipage}
+% % % % % % % % % % % % % % % % % % %
+% %Variable Referenzen
+% % % % % % % % % % % % % % % % % % %
+\subsection{Variable Referenzen}
+	\begin{minipage}{150pt}
+		\includegraphics[width = 5cm]{./images/spgref/04_var_ref.png}
+	\end{minipage}
+	\begin{minipage}{300pt}
+	Adjust-Pin (ADJ) zum Anschluss der externen Widerstände $R_1, R_2$\\
+		$V_{R1} = V_{REF} \qquad I_{R1} = I_{ADJ} \qquad V_{OUT} = V_{REF}\left(1+\dfrac{R_2}{R_1}\right)+I_{adj}\cdot R_2$\newline
+	für $I_{adj} << I_{R1}$ gilt\\
+	$V_{OUT} = V_{REF}\cdot \left(1+\dfrac{R_2}{R_1}\right)$
+	\end{minipage}	 
+	
